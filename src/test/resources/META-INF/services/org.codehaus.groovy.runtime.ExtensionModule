@@ -1,0 +1,3 @@
+moduleName=macro-module
+moduleVersion=1.0
+extensionClasses=org.jggug.magica.akatsuki.DoWhileMacro, org.jggug.magica.akatsuki.MatchMacro, org.jggug.magica.akatsuki.NewTraitMacro, org.jggug.magica.akatsuki.NullSafeMacro, org.jggug.magica.akatsuki.DoWithDataMacro, org.jggug.magica.akatsuki.TestMacroMethods
