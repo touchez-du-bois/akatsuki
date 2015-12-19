@@ -46,18 +46,5 @@ public class DoWhileMacro {
         ClosureExpression doWhileClosureExpression = closureX(closureBlockStatement);
         doWhileClosureExpression.setVariableScope(closureExpression.getVariableScope().copy());
         return callX(doWhileClosureExpression, "call");
-
-/*
-        BlockStatement doWhileBlockStatement = new BlockStatement();
-        MethodCallExpression methodCallExpression = callX(closureExpression, "call");
-        doWhileBlockStatement.addStatement(new ExpressionStatement(methodCallExpression));
-        DoWhileStatement doWhileStatement = new DoWhileStatement(new BooleanExpression(booleanExpression), doWhileBlockStatement);
-
-        BlockStatement closureBlockStatement = new BlockStatement();
-        closureBlockStatement.addStatement(doWhileStatement);
-        ClosureExpression doWhileClosureExpression = closureX(closureBlockStatement);
-        doWhileClosureExpression.setVariableScope(closureExpression.getVariableScope().copy());
-        return callX(doWhileClosureExpression, "call");
-*/
     }
 }
