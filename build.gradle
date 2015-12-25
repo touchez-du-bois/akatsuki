@@ -1,5 +1,8 @@
-apply plugin: 'java'
-apply plugin: 'groovy'
+plugins {
+  id 'java'
+  id 'groovy'
+  id 'com.github.johnrengelman.shadow' version '1.2.2'
+}
 
 group = 'org.jggug.magica'
 version = '0.0.1'
@@ -8,22 +11,17 @@ repositories {
     jcenter()
 }
 
-configurations {
-    provided
-}
-
-sourceSets {
-    main {
-        compileClasspath += configurations.provided
-    }
-}
-
 dependencies {
-    provided 'ru.trylogic.groovy.macro:groovy-macro-methods:0.3.0'
-    testRuntime 'ru.trylogic.groovy.macro:groovy-macro-methods:0.3.0'
+    compile 'ru.trylogic.groovy.macro:groovy-macro-methods:0.3.0'
 
     compile 'org.codehaus.groovy:groovy-all:2.4.5'
 
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
     testCompile 'junit:junit:4.12'
+}
+
+shadowJar {
+    dependencies {
+        include(dependency('ru.trylogic.groovy.macro:groovy-macro-methods:0.3.0'))
+    }
 }
